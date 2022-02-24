@@ -71,6 +71,25 @@ function areaCirculo(radio) {
 
 console.groupEnd();
 
+//Altura de un triangulo isoceles
+
+function alturaIsosceles(a,b,c) {
+    if (a === b) {
+        var resultado1 = Math.sqrt((a*a) - ((c/2)*(c/2)));
+        var aproximado = resultado1.toFixed(4)
+        return aproximado
+    } else if (a === c) {
+        var resultado2 = Math.sqrt((a*a) - ((b/2)*(b/2)));
+        var aproximado2 = resultado2.toFixed(4);
+        return aproximado2
+    } else if (b === c) {
+        var resultado3 = Math.sqrt((b*b) - ((a/2)*(a/2)));
+        var aproximado3 = resultado3.toFixed(4);
+        return aproximado3
+    } else 
+        return 'Lo que introduciste NO un es un triángulo isósceles'
+}
+
 //Aquí interactuamos con el HTML
 
 function calcularPerimetroCuadrado(){
@@ -131,4 +150,19 @@ function calcularArea() {
     const area = areaCirculo(valueRadio);
 
     alert(area)
+}
+
+function calcularAlturaIsosceles() {
+    const lado1 = document.getElementById("InputLado1")
+    const valueLado1 = Number(lado1.value)
+
+    const lado2 = document.getElementById("InputLado2")
+    const valueLado2 = Number(lado2.value)
+
+    const lado3 = document.getElementById("InputLado3")
+    const valueLado3 = Number(lado3.value)
+
+    const altura = alturaIsosceles(valueLado1, valueLado2, valueLado3)
+
+    alert(altura)
 }
